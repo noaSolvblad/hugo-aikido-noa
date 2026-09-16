@@ -44,5 +44,5 @@ Christian startede med sin ju-jitsu træning som soldat i 1952 på flyvestation 
 ![algert og øjvind]( algert_øjvind.jpg "Christian Christiansen og Algot Jensenis a comment")
  
 
-Klubben er en rigtig Amagerklub. Behovet for en klub startede i forbindelse med en række selv forsvarskurser i første halvdel af 60`erne.
+Klubben er en rigtig Amagerklub. Behovet for en klub startede i forbindelse med en række selvforsvarskurser i første halvdel af 60`erne.
 Især hold med selvforsvar for kvinder, var yderst populære. Klubben startede på Skolen ved Sundet, herefter bl.a. Skottegårdsskolen, Tårnby Gymnasium og nu Tårnby Skole, hvor der trænes i pigegymnastiksalen.

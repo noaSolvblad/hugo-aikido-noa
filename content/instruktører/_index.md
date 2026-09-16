@@ -7,17 +7,17 @@ draft: false
 #  featured_image: "aikido_logo.png"
 ---
 
-![Kenn]( kenn.avif#post-image "Kenn Jørgensen, Formand")
+![Kenn]( kenn.avif#post-image "Kenn Jørgensen, formand")
 
 ## Kenn Jørgensen
-* Sensei & Formand
+* Sensei & formand
 * 3\. dan Ju-Jitsu
 * Trænet kampsport siden 1987
 * Aktiv underviser siden 1993
 ---
 
 
-![Jan]( jan.avif "Jan Sell, Næstformand")
+![Jan]( jan.avif "Jan Sell, næstformand")
 
 ## Jan Sell
 * Shihan, næstformand & sekretær
