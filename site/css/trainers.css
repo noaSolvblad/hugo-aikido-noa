@@ -127,8 +127,11 @@
     top: 45px;
   }
 
+  /* Hold teksten over portrætterne på mobil, fri af Michels billede. */
   .hero-team .art-caption {
-    right: -5px;
+    top: 0;
+    right: 0;
+    writing-mode: horizontal-tb;
     font-size: .55rem;
   }
 

@@ -1,0 +1,3 @@
+cd "C:\Users\Nosen\OneDrive\Dokumenter\GitHub\hugo-aikido-noa\site"
+
+& "C:\Users\Nosen\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" -m http.server 8000 --bind 127.0.0.1
