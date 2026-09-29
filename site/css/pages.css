@@ -1,0 +1,388 @@
+/* Undersider: instruktører, historie og forsidens instruktørhenvisning */
+
+.header nav a[aria-current="page"] {
+  color: var(--red);
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+
+.page-heading {
+  padding-top: 35px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid var(--line);
+}
+
+.breadcrumbs {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: .75rem;
+  color: var(--muted);
+  margin-bottom: 55px;
+}
+
+.breadcrumbs a:hover {
+  color: var(--red);
+}
+
+.page-heading-grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 50px;
+  align-items: end;
+}
+
+.page-heading h1 {
+  font-size: clamp(3.8rem,6.8vw,7rem);
+  line-height: .94;
+}
+
+.page-heading h1 span {
+  color: var(--red);
+}
+
+.page-heading-grid>p {
+  max-width: 350px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  padding-bottom: 4px;
+}
+
+.page-jumps {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.page-jumps a {
+  display: flex;
+  gap: 25px;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 6px;
+}
+
+.instructor-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 32px;
+}
+
+.profile-image {
+  position: relative;
+  overflow: hidden;
+  background: #e5e9e0;
+}
+
+.profile-image img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.profile-image>span {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  background: var(--paper);
+  padding: 4px 12px;
+  font-size: .75rem;
+  font-weight: 600;
+}
+
+.profile-body {
+  padding-top: 25px;
+}
+
+.profile-body .eyebrow {
+  font-size: .65rem;
+  color: var(--red);
+  margin-bottom: 14px;
+  min-height: 20px;
+}
+
+.profile-body h3,.role-profile h3 {
+  font-family: var(--heading);
+  font-size: 2.6rem;
+  line-height: 1.1;
+}
+
+.profile-grade {
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+.profile-body dl {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  margin: 20px 0 0;
+  font-size: .8rem;
+}
+
+.profile-body dl>div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+}
+
+.profile-body dt {
+  color: var(--muted);
+}
+
+.profile-body dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.club-roles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  background: #e9ece6;
+  align-items: center;
+}
+
+.club-roles>div>p:last-child {
+  margin-top: 25px;
+  max-width: 400px;
+  color: var(--muted);
+}
+
+.role-profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.role-profile img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+}
+
+.role-profile .eyebrow {
+  color: var(--red);
+  font-size: .7rem;
+  margin-bottom: 15px;
+}
+
+.role-profile h3 {
+  font-size: 2.3rem;
+  margin-bottom: 18px;
+}
+
+.role-detail {
+  font-size: .85rem;
+  color: var(--muted);
+  margin-top: 15px;
+}
+
+.compact-contact {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+  background: var(--red);
+  color: white;
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+.compact-contact>div>p:last-child {
+  margin-top: 20px;
+  max-width: 500px;
+}
+
+.compact-contact .button {
+  flex-shrink: 0;
+}
+
+.footer-link {
+  font-size: .75rem;
+}
+
+.story-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9%;
+  align-items: center;
+}
+
+.archive-photo {
+  margin: 0;
+}
+
+.archive-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 660px;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.archive-photo figcaption {
+  font-size: .75rem;
+  color: var(--muted);
+  padding-top: 12px;
+}
+
+.story-intro h2 {
+  font-size: clamp(2.8rem,4.5vw,4.4rem);
+}
+
+.story-intro>div>p:not(.eyebrow) {
+  margin-top: 22px;
+  color: var(--muted);
+}
+
+.story-intro>div>.lead {
+  font-size: 1.3rem;
+  color: var(--ink)!important;
+}
+
+.history-stamp {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  padding-top: 25px;
+  margin-top: 30px;
+}
+
+.history-stamp strong {
+  font-family: var(--heading);
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--red);
+}
+
+.history-stamp span {
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+.timeline-section {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 8%;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.timeline-heading .eyebrow {
+  color: #c2c8c0;
+}
+
+.timeline article {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 25px;
+  border-top: 1px solid #ffffff35;
+  padding: 30px 0;
+}
+
+.timeline article:first-child {
+  padding-top: 0;
+  border: 0;
+}
+
+.timeline article:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-date {
+  color: #f4797d;
+  font-family: var(--heading);
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+
+.timeline article:nth-child(3) .timeline-date,.timeline article:nth-child(4) .timeline-date {
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+.timeline h3 {
+  font-size: 1.15rem;
+  line-height: 1.4;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.timeline p {
+  font-size: .95rem;
+  color: #c2c8c0;
+}
+
+.timeline .text-link {
+  border-color: #ffffff80;
+  margin-top: 14px;
+}
+
+.history-today {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+}
+
+.history-today>div>p:not(.eyebrow) {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.team-teaser {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 7%;
+  align-items: center;
+}
+
+.team-teaser>div>p:not(.eyebrow) {
+  max-width: 390px;
+  margin: 25px 0 18px;
+  color: var(--muted);
+}
+
+.teaser-portraits {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 15px;
+}
+
+.teaser-portraits img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: none;
+  transition: filter .3s;
+}
+
+.teaser-portraits span {
+  display: block;
+  font-family: var(--heading);
+  font-size: 1.5rem;
+  padding-top: 10px;
+}
+
+.history-page-link {
+  display: flex;
+  width: fit-content;
+  margin-top: 14px;
+}
+
+.hero-artist {
+  filter: none;
+  height: 105%;
+  object-position: center bottom;
+}

@@ -1,0 +1,625 @@
+/* Velkomstintro med Jan samt afsluttende regler til mindre skærme */
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  overflow: hidden;
+  isolation: isolate;
+  --intro-duration: 5.7s;
+}
+
+.facade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(50% + 1px);
+  background: var(--paper);
+  will-change: transform;
+}
+
+.facade-left {
+  left: 0;
+}
+
+.facade-right {
+  right: 0;
+}
+
+.intro-caption {
+  position: absolute;
+  top: 7%;
+  left: 7%;
+  right: 7%;
+  display: flex;
+  justify-content: space-between;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+}
+
+.intro-artist {
+  position: absolute;
+  inset: 12% 20% 13%;
+  transform-origin: 50% 100%;
+  will-change: transform,opacity;
+}
+
+.intro-artist img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.jan-stepping,.jan-bowing {
+  opacity: 0;
+}
+
+.jan-bowing {
+  transform: translateY(1.6%);
+}
+
+.intro-welcome {
+  position: absolute;
+  bottom: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.intro-welcome>span {
+  display: block;
+  font-size: .8rem;
+  letter-spacing: .2em;
+  font-weight: 600;
+}
+
+.intro-welcome small {
+  display: block;
+  font-size: .75rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.intro-skip {
+  position: absolute;
+  bottom: 30px;
+  right: 6%;
+  border: 1px solid #a6aea5;
+  background: #f5f6f2ee;
+  font-size: .8rem;
+  padding: 10px 16px;
+  z-index: 5;
+}
+
+.intro-skip span {
+  margin-left: 25px;
+}
+
+.intro.running .intro-artist {
+  animation: jan-approach var(--intro-duration) both;
+}
+
+.intro.running .jan-standing {
+  animation: jan-stand-pose var(--intro-duration) both;
+}
+
+.intro.running .jan-stepping {
+  animation: jan-step-pose var(--intro-duration) both;
+}
+
+.intro.running .jan-bowing {
+  animation: jan-bow-pose var(--intro-duration) both;
+}
+
+.intro.running .facade-left {
+  animation: welcome-open-left var(--intro-duration) cubic-bezier(.65,0,.25,1) both;
+}
+
+.intro.running .facade-right {
+  animation: welcome-open-right var(--intro-duration) cubic-bezier(.65,0,.25,1) both;
+}
+
+.intro.running .intro-caption,.intro.running .intro-welcome {
+  animation: welcome-label var(--intro-duration) both;
+}
+
+body.intro-active {
+  overflow: hidden;
+}
+
+@keyframes jan-approach {
+  0% {
+    opacity: 0;
+    transform: scale(.62) translateY(-9%);
+  }
+
+  5% {
+    opacity: 1;
+    transform: scale(.65) translateY(-8%);
+  }
+
+  13% {
+    transform: scale(.76) translateY(-5%);
+  }
+
+  22% {
+    transform: scale(.88) translateY(-2%);
+  }
+
+  31%,73% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  82%,100% {
+    opacity: 0;
+    transform: scale(1) translateY(0);
+  }
+
+}
+
+@keyframes jan-stand-pose {
+  0%,4% {
+    opacity: 1;
+  }
+
+  9%,18% {
+    opacity: 0;
+  }
+
+  23%,37% {
+    opacity: 1;
+  }
+
+  45%,59% {
+    opacity: 0;
+  }
+
+  68%,100% {
+    opacity: 1;
+  }
+
+}
+
+@keyframes jan-step-pose {
+  0%,4% {
+    opacity: 0;
+  }
+
+  9%,18% {
+    opacity: 1;
+  }
+
+  23%,100% {
+    opacity: 0;
+  }
+
+}
+
+@keyframes jan-bow-pose {
+  0%,37% {
+    opacity: 0;
+  }
+
+  45%,59% {
+    opacity: 1;
+  }
+
+  68%,100% {
+    opacity: 0;
+  }
+
+}
+
+@keyframes welcome-open-left {
+  0%,76% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-101%);
+  }
+
+}
+
+@keyframes welcome-open-right {
+  0%,76% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(101%);
+  }
+
+}
+
+@keyframes welcome-label {
+  0%,70% {
+    opacity: 1;
+  }
+
+  80%,100% {
+    opacity: 0;
+  }
+
+}
+
+@media(max-width:1100px) {
+  .page-heading-grid {
+    gap: 30px;
+  }
+
+  .instructor-grid {
+    gap: 22px;
+  }
+
+  .profile-image img {
+    height: 340px;
+  }
+
+  .club-roles {
+    gap: 35px;
+  }
+
+  .role-profile {
+    gap: 20px;
+  }
+
+  .role-profile img {
+    height: 250px;
+  }
+
+  .teaser-portraits img {
+    height: 230px;
+  }
+
+  .team-teaser {
+    gap: 30px;
+  }
+
+  .team-teaser .text-link {
+    font-size: .8rem;
+    gap: 15px;
+  }
+
+  .timeline-section {
+    gap: 40px;
+  }
+
+  .timeline article {
+    grid-template-columns: 75px 1fr;
+    gap: 18px;
+  }
+
+  .page-heading h1 {
+    font-size: 5.6vw;
+  }
+
+}
+
+@media(max-width:800px) {
+  .page-heading-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-heading h1 {
+    font-size: clamp(3rem,8.5vw,5.5rem);
+  }
+
+  .page-heading-grid>p {
+    max-width: 500px;
+  }
+
+  .instructor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .instructor-profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .profile-body {
+    padding-top: 20px;
+  }
+
+  .profile-image img {
+    height: 340px;
+  }
+
+  .club-roles {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .role-profile {
+    max-width: 550px;
+  }
+
+  .role-profile img {
+    height: 320px;
+  }
+
+  .story-intro {
+    gap: 35px;
+  }
+
+  .timeline-section {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    margin-top: 10px;
+  }
+
+  .history-today {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .team-teaser {
+    grid-template-columns: 1fr;
+  }
+
+  .teaser-portraits img {
+    height: 310px;
+  }
+
+  .compact-contact {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+}
+
+@media(max-width:700px) {
+  .page-heading {
+    padding-top: 25px;
+    padding-bottom: 40px;
+  }
+
+  .breadcrumbs {
+    margin-bottom: 35px;
+    font-size: .7rem;
+  }
+
+  .page-heading h1 {
+    font-size: clamp(2.85rem,10.4vw,4.5rem);
+  }
+
+  .page-heading-grid {
+    gap: 25px;
+  }
+
+  .page-heading-grid>p {
+    font-size: .95rem;
+  }
+
+  .page-jumps {
+    gap: 25px;
+    font-size: .8rem;
+    margin-top: 30px;
+  }
+
+  .page-jumps a {
+    gap: 15px;
+  }
+
+  .instructor-grid {
+    gap: 40px;
+  }
+
+  .instructor-profile {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .profile-image img {
+    height: 440px;
+    object-fit: contain;
+    background: #e7e8e5;
+  }
+
+  .profile-body .eyebrow {
+    min-height: 0;
+    font-size: .7rem;
+  }
+
+  .profile-body h3 {
+    font-size: 2.7rem;
+  }
+
+  .profile-body dl {
+    font-size: .9rem;
+  }
+
+  .profile-grade {
+    font-size: 1.05rem;
+  }
+
+  .teaching-team h2 {
+    font-size: clamp(2.5rem,9.3vw,3.2rem);
+  }
+
+  .role-profile {
+    gap: 22px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .role-profile img {
+    height: 240px;
+    object-fit: cover;
+  }
+
+  .role-profile h3 {
+    font-size: 2.1rem;
+  }
+
+  .club-roles h2 {
+    font-size: clamp(2.5rem,9.5vw,3.2rem);
+  }
+
+  .role-detail {
+    font-size: .8rem;
+  }
+
+  .compact-contact {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .compact-contact h2 {
+    font-size: clamp(2.65rem,9.6vw,3.2rem);
+  }
+
+  .story-intro {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .archive-photo img {
+    height: auto;
+    max-height: 550px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .story-intro h2 {
+    font-size: 3rem;
+  }
+
+  .story-intro>div>p:not(.eyebrow) {
+    margin-top: 20px;
+  }
+
+  .timeline article {
+    grid-template-columns: 65px minmax(0,1fr);
+    gap: 18px;
+  }
+
+  .timeline-date {
+    font-size: 1.4rem;
+  }
+
+  .timeline h3 {
+    font-size: 1.1rem;
+  }
+
+  .timeline p {
+    font-size: .9rem;
+  }
+
+  .history-today h2 {
+    font-size: clamp(2.5rem,9.3vw,3.2rem);
+  }
+
+  .teaser-portraits {
+    gap: 12px;
+  }
+
+  .teaser-portraits img {
+    height: 210px;
+  }
+
+  .teaser-portraits span {
+    font-size: 1.4rem;
+  }
+
+  .team-teaser .text-link {
+    font-size: .85rem;
+  }
+
+  .intro-caption {
+    font-size: .55rem;
+    gap: 25px;
+  }
+
+  .intro-caption span:last-child {
+    max-width: 105px;
+    text-align: right;
+  }
+
+  .intro-artist {
+    inset: 16% -3% 20%;
+  }
+
+  .intro-welcome {
+    bottom: 14%;
+  }
+
+  .intro-welcome>span {
+    font-size: .7rem;
+  }
+
+  .intro-skip {
+    bottom: 20px;
+  }
+
+  .hero-artist {
+    height: 105%;
+  }
+
+}
+
+@media(max-width:380px) {
+  .profile-image img {
+    height: 370px;
+  }
+
+  .teaser-portraits img {
+    height: 175px;
+  }
+
+  .role-profile {
+    gap: 15px;
+  }
+
+  .role-profile img {
+    height: 215px;
+  }
+
+  .role-profile h3 {
+    font-size: 1.9rem;
+  }
+
+  .role-profile p {
+    font-size: .85rem;
+  }
+
+  .role-profile .eyebrow {
+    font-size: .65rem;
+  }
+
+  .page-heading h1 {
+    font-size: 2.85rem;
+  }
+
+  .team-teaser .text-link {
+    font-size: .75rem;
+    gap: 10px;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,*::before,*::after {
+    animation: none!important;
+    transition: none!important;
+  }
+
+  .intro,.intro-pending::before {
+    display: none!important;
+  }
+
+}

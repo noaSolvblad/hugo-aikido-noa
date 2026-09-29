@@ -12,6 +12,37 @@ Der er nu tre selvstændige HTML-sider:
 - `site/instruktører/index.html`: instruktører samt andre funktioner i klubben.
 - `site/om-klubben/index.html`: klubbens baggrund, historiske foto og tidslinje.
 
+## Find rundt i koden
+
+Selvom projektmappen hedder hugo-aikido-noa, er hjemmesiden almindelig HTML, CSS og JavaScript. Du behøver ikke Hugo eller et buildværktøj.
+
+| Det vil du ændre | Her skal du kigge |
+| --- | --- |
+| Forsidens tekster, træningstider og kontaktoplysninger | [site/index.html](site/index.html) |
+| Instruktørnavne, grader og beskrivelser | [site/instruktører/index.html](site/instruktører/index.html) |
+| Klubbens historie og tidslinje | [site/om-klubben/index.html](site/om-klubben/index.html) |
+| Farver, skrifter, menu og forsidens afsnit | [site/css/base.css](site/css/base.css) |
+| Undersidernes layout og instruktørafsnittet længere nede på forsiden | [site/css/pages.css](site/css/pages.css) |
+| De tre store portrætter øverst på forsiden | [site/css/trainers.css](site/css/trainers.css) |
+| Jans introanimation og de afsluttende mobiltilpasninger | [site/css/intro.css](site/css/intro.css) |
+| Intro, mobilmenu, årstal og Facebook-indlæsning | [site/script.js](site/script.js) |
+| Billeder og logo | [site/assets/](site/assets/) |
+| Automatisk udgivelse | [.github/workflows/pages.yaml](.github/workflows/pages.yaml) |
+
+### Sådan finder du et afsnit
+
+HTML-filerne har indrykning og kommentarer ved navngivne afsnit. Søg for eksempel efter `id="traening"` for træningstider eller `id="kontakt"` for kontaktoplysninger. En HTML-klasse som `training-card` findes i CSS som `.training-card`.
+
+[site/styles.css](site/styles.css) indlæser de fire CSS-filer i rækkefølge. Bevar rækkefølgen: senere regler tilpasser tidligere regler. Søg efter `@media` for skærmstørrelser og reduceret bevægelse. De eksisterende afsluttende mobilregler ligger i intro.css, fordi deres placering påvirker designet på alle tre sider.
+
+JavaScript starter nederst i script.js med fire funktioner: `setupIntro()`, `setupMobileMenu()`, `updateCopyrightYear()` og `setupFacebookFeed()`. Indstillinger for introlængde og Facebook-adresse står øverst.
+
+Menu og sidefod er skrevet i hver af de tre HTML-filer. Når du ændrer fælles links, skal du rette alle tre. Undersider bruger `../` foran stier til fælles filer.
+
+### Kontroller en ændring
+
+Åbn site/index.html i en browser, og besøg begge undersider. Kontroller både et bredt og et smalt vindue. Ved ændringer i JavaScript: prøv mobilmenuen, Escape, introens spring-over-knap og “Se intro igen”. Facebook opretter først forbindelse, når du trykker “Vis Facebook-feed”.
+
 ## GitHub Pages
 
 Workflowet `.github/workflows/pages.yaml` udgiver `site/` direkte. GitHub Pages skal bruge **GitHub Actions** som source. Ved push til `main`, som ændrer `site/` eller workflowet, udgives siden. Workflowet kan også startes manuelt.
