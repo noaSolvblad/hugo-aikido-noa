@@ -424,7 +424,7 @@ body.intro-active {
   .profile-image img {
     height: 440px;
     object-fit: contain;
-    background: #e7e8e5;
+    background: transparent;
   }
 
   .profile-body .eyebrow {

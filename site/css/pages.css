@@ -73,14 +73,14 @@
 .profile-image {
   position: relative;
   overflow: hidden;
-  background: #e5e9e0;
+  background: transparent;
 }
 
 .profile-image img {
   display: block;
   width: 100%;
   height: 400px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center 25%;
 }
 
@@ -362,7 +362,7 @@
   display: block;
   width: 100%;
   height: 260px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center 25%;
   filter: none;
   transition: filter .3s;
@@ -385,4 +385,11 @@
   filter: none;
   height: 105%;
   object-position: center bottom;
+}
+
+/* Bevar portrætternes klub- og forbundslogoer, og lad den hvide
+   billedbaggrund falde sammen med sidens baggrund. */
+.profile-image img,
+.teaser-portraits img {
+  mix-blend-mode: multiply;
 }
