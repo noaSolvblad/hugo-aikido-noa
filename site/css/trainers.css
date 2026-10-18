@@ -105,3 +105,16 @@
   .trainer-names a { font-size: 1.2rem; }
   .trainer-names small { font-size: .53rem; }
 }
+
+/* Hold gruppen samlet og i en rolig størrelse på computerskærme. */
+@media (min-width: 701px) {
+  .hero-team .hero-trainers {
+    width: min(100%, 520px);
+    flex: none;
+  }
+
+  .hero-team .trainer-names {
+    width: min(84%, 437px);
+    flex: none;
+  }
+}
