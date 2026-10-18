@@ -8,3 +8,13 @@
 @import url('./css/intro.css');
 
 @import url('./css/dark-mode.css?v=20261018-2');
+
+/* Sprogvalg på alle sider, også i mobilmenuen. */
+.header .language-switch { display: flex; align-items: center; gap: 8px; font-size: .8rem; white-space: nowrap; }
+.language-switch a { padding: 10px 0; }
+.language-switch [aria-current="true"] { text-decoration: underline; text-underline-offset: 4px; }
+@media (min-width: 701px) { .header nav { gap: clamp(12px, 1.8vw, 30px); } }
+@media (min-width: 701px) and (max-width: 1250px) {
+  .header { height: auto; min-height: 100px; flex-wrap: wrap; gap: 16px 24px; padding-top: 18px; padding-bottom: 18px; }
+  .header nav { max-width: 100%; flex-wrap: wrap; }
+}

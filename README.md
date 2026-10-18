@@ -62,3 +62,7 @@ Besøgende kan springe introen over med knappen eller Escape. Reduceret bevægel
 Facebook-feedet bruger Metas Page Plugin og opretter først forbindelse til Facebook, når besøgende vælger **Vis Facebook-feed**. Den faktiske visning afhænger af Meta, sidens offentlige tilgængelighed og browserens beskyttelse. Direkte link er altid tilgængeligt. Ingen API-nøgler er nødvendige. Indlejringens oprettelse er testet; liveopslag er ikke verificeret.
 
 Skrifttyper hentes fra Google Fonts med lokale fallback-skrifter. Alle billeder ligger lokalt i `site/assets`.
+
+## Dansk og engelsk
+
+Alle fire sider findes på dansk i `site/` og engelsk i `site/en/` med samme undermapper. Sprogvalget i menuen skifter til den tilsvarende side; sektionslinks bevares med JavaScript. Sprogvalget virker også uden JavaScript. Opdater begge sprog ved indholdsændringer. De engelske sider deler billeder, CSS og JavaScript med de danske og udgives automatisk med resten af `site/`.

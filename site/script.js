@@ -137,8 +137,11 @@
         show_facepile: 'false',
       });
 
+      iframe.title = document.documentElement.lang === 'en'
+        ? 'Latest Facebook posts from Aiki-do Ju-jitsu Club'
+        : 'Seneste Facebook-opslag fra Ju-jitsu klubben Aiki-do';
+      params.set('locale', document.documentElement.lang === 'en' ? 'en_GB' : 'da_DK');
       iframe.src = 'https://www.facebook.com/plugins/page.php?' + params.toString();
-      iframe.title = 'Seneste Facebook-opslag fra Ju-jitsu klubben Aiki-do';
       iframe.width = String(width);
       iframe.height = '520';
       iframe.allow = 'encrypted-media; picture-in-picture; web-share';
@@ -149,6 +152,13 @@
   }
 
   // Start sidens funktioner. Hver funktion springer over, hvis dens HTML mangler.
+  document.querySelectorAll('.language-switch a').forEach(link => {
+    if (!link.hasAttribute('aria-current')) {
+      link.addEventListener('click', () => {
+        link.hash = window.location.hash;
+      });
+    }
+  });
   setupIntro();
   setupMobileMenu();
   updateCopyrightYear();
