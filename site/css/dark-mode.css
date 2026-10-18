@@ -12,6 +12,12 @@
     --dark-red: #c52b32;
   }
 
+  /* Portrætter med hvid baggrund skal beholde deres originale farver.
+     Multiply fra det lyse tema gør dem næsten sorte på mørk baggrund. */
+  .profile-image img,
+  .teaser-portraits img {
+    mix-blend-mode: normal;
+  }
   html { background: var(--paper); }
 
   .hero-description { color: var(--muted); }
