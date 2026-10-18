@@ -1,0 +1,57 @@
+/* Følg automatisk enhedens farvetema, også når det ændres under besøget. */
+:root { color-scheme: light dark; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #141815;
+    --ink: #f1f3ed;
+    --muted: #b0b8ad;
+    --line: #3b443c;
+    --red: #ff777b;
+    --dark-surface: #202720;
+    --dark-red: #c52b32;
+  }
+
+  html { background: var(--paper); }
+
+  .hero-description { color: var(--muted); }
+
+  .training, .club-roles,
+  .facebook-panel, .membership-card,
+  .people img, .skip-link {
+    background: var(--dark-surface);
+  }
+
+  /* Disse afsnit skal bevare lys tekst på en mørk flade. */
+  .facts, .training-card, .timeline-section, .membership-box {
+    background: #242c25;
+    color: var(--ink);
+  }
+
+  .button.dark {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Lys rød til tekst; dybere rød under hvide tekster og portrætter. */
+  .button.red, .training-card.youth,
+  .contact, .compact-contact,
+  .hero-trainers, .red-disc, .red-dash {
+    background: var(--dark-red);
+  }
+
+  .button.red:hover { background: #ab2028; }
+
+  .hero-note span + span, .location { border-color: var(--line); }
+
+  .intro-skip {
+    background: #202720ee;
+    border-color: var(--line);
+    color: var(--ink);
+  }
+
+  .contact h2 span { color: #ffe0e1; }
+  .contact-name span, .contact-details > p:last-child { color: #ffe9ea; }
+
+  .facebook-panel { box-shadow: none; }
+}

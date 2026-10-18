@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#131614">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f6f7f3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#141815" media="(prefers-color-scheme: dark)">
     <meta name="description" content="Ju-jitsu og selvforsvar på Amager siden 1965. Træning for voksne og børn fra 8 år på Tårnby Skole. Kom og prøv hos Ju-jitsu klubben Aiki-do.">
     <title>Aiki-do — Selvforsvar. Selvtillid. Fællesskab.</title>
     <meta property="og:site_name" content="Ju-jitsu klubben Aiki-do">
@@ -27,6 +29,9 @@
         background: #f6f7f3;
         z-index: 60;
       }
+      @media (prefers-color-scheme: dark) {
+        .intro-pending::before { background: #141815; }
+      }
     </style>
     <script>
       // Kør før sidens indhold vises. Selve introen styres i script.js.
@@ -35,7 +40,7 @@
         setTimeout(() => document.documentElement.classList.remove('intro-pending'), 6000);
       }
     </script>
-    <link rel="stylesheet" href="styles.css?v=20261018-4">
+    <link rel="stylesheet" href="styles.css?v=20261018-dark1">
     <script src="script.js" defer></script>
   </head>
   <body>
